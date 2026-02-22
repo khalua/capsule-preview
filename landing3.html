@@ -19,16 +19,28 @@
 <body>
 
 <!-- NAV -->
-<nav class="flex items-center justify-between px-6 sm:px-10 lg:px-16 py-6" style="border-bottom: 1px solid #e5e5e0;">
-  <span class="text-xl font-serif font-bold text-neutral-900 tracking-tight">Capsule</span>
-  <div class="flex items-center gap-6">
-    <a href="landing1.html" class="text-neutral-400 text-xs tracking-widest uppercase hover:text-neutral-900 transition">v1</a>
-    <a href="landing2.html" class="text-neutral-400 text-xs tracking-widest uppercase hover:text-neutral-900 transition">v2</a>
-    <a href="landing3.html" class="text-neutral-900 text-xs tracking-widest uppercase border-b border-neutral-900 pb-0.5">v3</a>
-    <a href="#" class="text-neutral-500 text-sm hover:text-neutral-900 transition">Log in</a>
-    <a href="#" class="v3-accent-bg text-white px-5 py-2 rounded-full text-sm font-medium hover:opacity-90 transition">Get Started</a>
+<nav class="bg-white/80 backdrop-blur-sm border-b border-stone-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <span class="text-xl font-serif font-bold text-neutral-900">Capsule</span>
+      <div class="flex items-center space-x-4">
+        <a href="#" class="text-sm text-neutral-500 hover:text-neutral-900">Log in</a>
+        <a href="#" class="ml-3 inline-flex items-center px-5 py-2 v3-accent-bg text-white text-sm font-medium rounded-full hover:opacity-90 transition">Get Started</a>
+      </div>
+    </div>
   </div>
 </nav>
+
+<!-- VERSION SWITCHER -->
+<div class="flex justify-center py-2" style="background: #f0efeb; border-bottom: 1px solid #e5e5e0;">
+  <div class="flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.08);">
+    <a href="landing1.html" class="text-neutral-400 hover:text-neutral-700 transition px-1">v1</a>
+    <span class="text-neutral-300">·</span>
+    <a href="landing2.html" class="text-neutral-400 hover:text-neutral-700 transition px-1">v2</a>
+    <span class="text-neutral-300">·</span>
+    <span class="text-neutral-700 px-1">v3</span>
+  </div>
+</div>
 
 <!-- HERO -->
 <section class="px-6 sm:px-10 lg:px-16 pt-20 pb-28">
