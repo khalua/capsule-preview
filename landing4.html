@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capsule — Yours Alone, Forever</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    .font-serif { font-family: 'Playfair Display', Georgia, serif; }
+    body { font-family: 'Inter', system-ui, sans-serif; background-color: #faf8f5; }
+    .linen { background-color: #faf8f5; }
+
+    @keyframes softpulse {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.04); }
+    }
+    .pulse-soft { animation: softpulse 3s ease-in-out infinite; }
+
+    @keyframes waveform {
+      0%, 100% { transform: scaleY(1); }
+      50% { transform: scaleY(0.25); }
+    }
+    .bar { animation: waveform var(--dur, 1.2s) ease-in-out infinite var(--delay, 0s); }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="bg-white/80 backdrop-blur-sm border-b border-stone-100 sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="landing4.html" class="flex items-center gap-2">
+        <span class="text-xl font-serif font-bold text-stone-800">Capsule</span>
+      </a>
+      <div class="flex items-center space-x-4">
+        <a href="#" class="text-sm text-stone-500 hover:text-stone-800">Log in</a>
+        <a href="#" class="ml-3 inline-flex items-center px-5 py-2 bg-stone-800 text-white text-sm font-medium rounded-full hover:bg-stone-700 transition">Begin a Capsule</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- VERSION SWITCHER -->
+<div class="flex justify-center py-2" style="background: rgba(0,0,0,0.04); border-bottom: 1px solid rgba(0,0,0,0.06);">
+  <div class="flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.08);">
+    <a href="landing1.html" class="text-stone-400 hover:text-stone-700 transition px-1">v1</a>
+    <span class="text-stone-300">·</span>
+    <a href="landing2.html" class="text-stone-400 hover:text-stone-700 transition px-1">v2</a>
+    <span class="text-stone-300">·</span>
+    <a href="landing3.html" class="text-stone-400 hover:text-stone-700 transition px-1">v3</a>
+    <span class="text-stone-300">·</span>
+    <span class="text-stone-700 px-1">v4</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="relative overflow-hidden" style="background: linear-gradient(160deg, #f5f0e8 0%, #e8dfd3 60%, #d4c5b0 100%);">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-28 lg:py-44">
+    <div class="max-w-2xl">
+      <!-- Privacy badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium text-stone-600 mb-8" style="background: rgba(255,255,255,0.55); border: 1px solid rgba(0,0,0,0.08);">
+        <svg class="w-3.5 h-3.5 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        Private to your family. Always.
+      </div>
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-serif font-bold text-stone-800 leading-[1.1]">
+        Their stories.<br>
+        <span class="italic font-normal">Just for you.</span>
+      </h1>
+      <p class="mt-8 text-xl text-stone-600 leading-relaxed">
+        Capsule uses AI to gently interview the people you love — asking the questions you never got around to. What they share stays within your family, forever.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a href="#" class="inline-flex items-center justify-center px-8 py-4 bg-stone-800 text-white font-medium rounded-full hover:bg-stone-700 transition text-base">
+          Begin a Capsule
+        </a>
+        <a href="#how" class="inline-flex items-center gap-2 px-8 py-4 text-stone-600 font-medium hover:text-stone-900 transition text-base">
+          See how it works
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating quote cards -->
+  <div class="hidden lg:block absolute right-8 top-1/2 -translate-y-1/2 space-y-4 max-w-xs">
+    <div class="bg-white/70 backdrop-blur-sm rounded-2xl p-5 shadow-sm border border-stone-200/50 -rotate-1">
+      <p class="text-stone-500 text-xs tracking-widest uppercase mb-2">Childhood</p>
+      <p class="font-serif text-stone-700 text-sm leading-relaxed">"We had a little house on Elm Street. Six of us in three rooms, and I never once thought we were poor."</p>
+    </div>
+    <div class="bg-white/70 backdrop-blur-sm rounded-2xl p-5 shadow-sm border border-stone-200/50 rotate-1 ml-8">
+      <p class="text-stone-500 text-xs tracking-widest uppercase mb-2">Wisdom</p>
+      <p class="font-serif text-stone-700 text-sm leading-relaxed">"The thing I'd tell my younger self? Worry less. Most of what I worried about never happened."</p>
+    </div>
+    <div class="bg-white/70 backdrop-blur-sm rounded-2xl p-5 shadow-sm border border-stone-200/50 -rotate-1 ml-4">
+      <p class="text-stone-500 text-xs tracking-widest uppercase mb-2">Love</p>
+      <p class="font-serif text-stone-700 text-sm leading-relaxed">"Your grandfather proposed three times before I said yes. I wanted to be sure he really meant it."</p>
+    </div>
+  </div>
+</div>
+
+<!-- AI INTERVIEWER — the new value prop section -->
+<div class="bg-white py-28" id="ai">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+      <!-- Left: visual conversation mock -->
+      <div class="order-2 lg:order-1">
+        <div class="rounded-3xl overflow-hidden shadow-lg border border-stone-100" style="background: linear-gradient(180deg, #faf8f5, #f0ebe3);">
+          <!-- Header bar -->
+          <div class="px-6 py-4 border-b border-stone-100 flex items-center gap-3" style="background: #fff;">
+            <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #e8dfd3, #d4c5b0);">
+              <svg class="w-4 h-4 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-stone-800">Capsule AI</p>
+              <div class="flex items-center gap-1.5 mt-0.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 pulse-soft"></span>
+                <p class="text-xs text-stone-400">Listening</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Conversation -->
+          <div class="p-6 space-y-5">
+            <!-- AI question -->
+            <div class="flex gap-3">
+              <div class="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs" style="background: linear-gradient(135deg, #e8dfd3, #d4c5b0);">
+                <svg class="w-3.5 h-3.5 text-stone-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a2 2 0 012 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 017 7H3a7 7 0 017-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 012-2zM7.5 13a.5.5 0 000 1h9a.5.5 0 000-1h-9zM2 17h20v2H2v-2z"/></svg>
+              </div>
+              <div class="rounded-2xl rounded-tl-sm px-4 py-3 max-w-xs" style="background: #ede0d0;">
+                <p class="text-stone-700 text-sm leading-relaxed font-serif italic">"What's a place from your childhood that still feels real when you close your eyes?"</p>
+              </div>
+            </div>
+
+            <!-- User response -->
+            <div class="flex gap-3 justify-end">
+              <div class="rounded-2xl rounded-tr-sm px-4 py-3 max-w-xs bg-stone-800">
+                <p class="text-stone-100 text-sm leading-relaxed">"Our kitchen on Sunday mornings. My mother had this old radio on the counter and she'd hum along while she cooked."</p>
+              </div>
+              <div class="flex-shrink-0 w-7 h-7 rounded-full bg-stone-300 flex items-center justify-center text-xs font-medium text-stone-600">M</div>
+            </div>
+
+            <!-- AI follow-up -->
+            <div class="flex gap-3">
+              <div class="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs" style="background: linear-gradient(135deg, #e8dfd3, #d4c5b0);">
+                <svg class="w-3.5 h-3.5 text-stone-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a2 2 0 012 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 017 7H3a7 7 0 017-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 012-2zM7.5 13a.5.5 0 000 1h9a.5.5 0 000-1h-9zM2 17h20v2H2v-2z"/></svg>
+              </div>
+              <div class="rounded-2xl rounded-tl-sm px-4 py-3 max-w-xs" style="background: #ede0d0;">
+                <p class="text-stone-700 text-sm leading-relaxed font-serif italic">"That sounds wonderful. Do you remember what she used to hum?"</p>
+              </div>
+            </div>
+
+            <!-- Listening indicator -->
+            <div class="flex gap-3 justify-end items-center">
+              <div class="rounded-2xl rounded-tr-sm px-4 py-3 bg-stone-100 flex items-end gap-0.5">
+                <div class="bar w-1 rounded-full bg-stone-400" style="height: 8px; --dur: 1.1s; --delay: 0s;"></div>
+                <div class="bar w-1 rounded-full bg-stone-400" style="height: 14px; --dur: 0.9s; --delay: 0.15s;"></div>
+                <div class="bar w-1 rounded-full bg-stone-400" style="height: 10px; --dur: 1.3s; --delay: 0.3s;"></div>
+                <div class="bar w-1 rounded-full bg-stone-400" style="height: 16px; --dur: 1.0s; --delay: 0.05s;"></div>
+                <div class="bar w-1 rounded-full bg-stone-400" style="height: 8px; --dur: 1.2s; --delay: 0.2s;"></div>
+              </div>
+              <div class="flex-shrink-0 w-7 h-7 rounded-full bg-stone-300 flex items-center justify-center text-xs font-medium text-stone-600">M</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: copy -->
+      <div class="order-1 lg:order-2">
+        <p class="text-stone-400 font-medium tracking-widest uppercase text-xs">AI-Powered Interviewing</p>
+        <h2 class="mt-4 text-3xl sm:text-4xl font-serif font-bold text-stone-800 leading-tight">
+          The questions you always meant to ask.
+        </h2>
+        <p class="mt-6 text-stone-600 leading-relaxed text-lg">
+          A real conversation takes patience, the right moment, and knowing what to ask. Capsule's AI does all three — gently drawing out the stories your loved one has never thought to tell.
+        </p>
+        <div class="mt-10 space-y-6">
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-stone-500" style="background: #ede0d0;">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-3 3v-3z"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-stone-800">Follows the thread</p>
+              <p class="text-stone-500 text-sm mt-0.5">When something interesting comes up, Capsule asks a natural follow-up — just like a good listener would.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-stone-500" style="background: #ede0d0;">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-stone-800">No pressure, ever</p>
+              <p class="text-stone-500 text-sm mt-0.5">Unhurried. Skippable. The pace is entirely theirs. Sessions can run five minutes or an hour.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-stone-500" style="background: #ede0d0;">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-stone-800">Remembers everything</p>
+              <p class="text-stone-500 text-sm mt-0.5">Capsule builds on each session. The story deepens with every conversation, never starting from scratch.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- PRIVACY / FAMILY-ONLY — the other new section -->
+<div class="py-28" style="background: linear-gradient(160deg, #1c1917 0%, #292524 100%);">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Copy -->
+      <div>
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium text-stone-300 mb-8" style="background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          Privacy first, always
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-stone-100 leading-tight">
+          These stories belong to your family. Not to us.
+        </h2>
+        <p class="mt-6 text-stone-400 leading-relaxed text-lg">
+          What your grandmother shares stays within the family you choose. Capsule is built around confidentiality — no stories are used for training, shared publicly, or visible to anyone outside your circle.
+        </p>
+        <div class="mt-10 space-y-5">
+          <div class="flex gap-4 items-start">
+            <div class="flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-stone-200">You control who sees what</p>
+              <p class="text-stone-500 text-sm mt-0.5">Invite exactly the family members you want. Access can be revoked at any time.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-stone-200">Stories are never used to train AI</p>
+              <p class="text-stone-500 text-sm mt-0.5">What's said in Capsule stays in Capsule. Full stop.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-stone-200">Encrypted and secure</p>
+              <p class="text-stone-500 text-sm mt-0.5">All audio and transcripts are encrypted at rest and in transit.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-stone-200">Preserved, not published</p>
+              <p class="text-stone-500 text-sm mt-0.5">This is an heirloom, not a social network. The stories are yours to keep and pass down.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual: family access card -->
+      <div class="flex justify-center">
+        <div class="w-full max-w-sm">
+          <div class="rounded-3xl p-8 border" style="background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.08);">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background: rgba(251,191,36,0.15); border: 1px solid rgba(251,191,36,0.25);">
+                <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+              </div>
+              <div>
+                <p class="text-stone-200 text-sm font-semibold">Margaret's Capsule</p>
+                <p class="text-stone-500 text-xs">Private · Family only</p>
+              </div>
+              <div class="ml-auto w-2 h-2 rounded-full bg-emerald-400"></div>
+            </div>
+
+            <p class="text-stone-400 text-xs tracking-widest uppercase mb-4">Who has access</p>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-medium text-stone-700" style="background: #e8dfd3;">S</div>
+                <div>
+                  <p class="text-stone-300 text-sm">Sarah (daughter)</p>
+                  <p class="text-stone-600 text-xs">Set up the Capsule</p>
+                </div>
+                <span class="ml-auto text-xs text-stone-600 font-medium">Admin</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-medium text-stone-700" style="background: #ddd0c4;">J</div>
+                <div>
+                  <p class="text-stone-300 text-sm">James (son)</p>
+                  <p class="text-stone-600 text-xs">Added by Sarah</p>
+                </div>
+                <span class="ml-auto text-xs text-stone-600 font-medium">Viewer</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-medium text-stone-700" style="background: #d4c5b0;">E</div>
+                <div>
+                  <p class="text-stone-300 text-sm">Emma (granddaughter)</p>
+                  <p class="text-stone-600 text-xs">Added by Sarah</p>
+                </div>
+                <span class="ml-auto text-xs text-stone-600 font-medium">Viewer</span>
+              </div>
+              <div class="border-t pt-3 flex items-center gap-2 cursor-pointer group" style="border-color: rgba(255,255,255,0.07);">
+                <div class="w-8 h-8 rounded-full border flex items-center justify-center" style="border-color: rgba(255,255,255,0.12);">
+                  <svg class="w-4 h-4 text-stone-500 group-hover:text-stone-400 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+                </div>
+                <p class="text-stone-500 text-sm group-hover:text-stone-400 transition">Invite a family member…</p>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-5 border-t" style="border-color: rgba(255,255,255,0.07);">
+              <p class="text-stone-600 text-xs text-center leading-relaxed">No one outside this list can see Margaret's recordings, transcripts, or moments.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div id="how" class="bg-white py-28">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <p class="text-stone-400 font-medium tracking-widest uppercase text-xs text-center">How It Works</p>
+    <h2 class="mt-4 text-3xl sm:text-4xl font-serif font-bold text-stone-800 text-center">As simple as a phone call</h2>
+    <div class="mt-20 grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <div class="relative rounded-3xl p-10" style="background: linear-gradient(135deg, #f5ebe0, #ede0d0);">
+        <span class="text-7xl font-serif font-bold text-stone-200 leading-none">1</span>
+        <h3 class="mt-4 text-xl font-serif font-bold text-stone-800">You set it up</h3>
+        <p class="mt-2 text-stone-500 leading-relaxed">Create a Capsule, invite family, and hand the app to your loved one. Five minutes, done.</p>
+        <div class="mt-6 flex items-center gap-2 text-stone-400 text-sm">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Takes about 5 minutes
+        </div>
+      </div>
+      <div class="relative rounded-3xl p-10" style="background: linear-gradient(135deg, #ede0d0, #e3d5c4);">
+        <span class="text-7xl font-serif font-bold text-stone-200 leading-none">2</span>
+        <h3 class="mt-4 text-xl font-serif font-bold text-stone-800">The AI listens and asks</h3>
+        <p class="mt-2 text-stone-500 leading-relaxed">A warm, patient voice draws out stories through gentle questions — no typing, no screens to navigate.</p>
+        <div class="mt-6 flex items-center gap-2 text-stone-400 text-sm">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
+          ~30 min per session
+        </div>
+      </div>
+      <div class="relative rounded-3xl p-10" style="background: linear-gradient(135deg, #e3d5c4, #d8c9b5);">
+        <span class="text-7xl font-serif font-bold text-stone-200 leading-none">3</span>
+        <h3 class="mt-4 text-xl font-serif font-bold text-stone-800">Your family receives a treasure</h3>
+        <p class="mt-2 text-stone-500 leading-relaxed">Voice, transcripts, and curated highlights — organized and shared with exactly who you invited.</p>
+        <div class="mt-6 flex items-center gap-2 text-stone-400 text-sm">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          Private to your family
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PULL QUOTE -->
+<div class="py-24" style="background: linear-gradient(135deg, #e8dfd3, #d4c5b0);">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-6xl font-serif text-stone-400 leading-none">&ldquo;</p>
+    <blockquote class="font-serif text-2xl sm:text-3xl text-stone-800 leading-relaxed -mt-4">
+      I never actually asked her about any of it.<br>I just assumed I'd always have time.
+    </blockquote>
+    <p class="mt-8 text-stone-500 text-sm">Why Capsule exists.</p>
+  </div>
+</div>
+
+<!-- WHAT GETS PRESERVED -->
+<div style="background: linear-gradient(180deg, #faf8f5, #f0ebe3);" class="py-28">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <p class="text-stone-400 font-medium tracking-widest uppercase text-xs">What Gets Preserved</p>
+      <h2 class="mt-4 text-3xl sm:text-4xl font-serif font-bold text-stone-800">Their voice. Their words. Their wisdom.</h2>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="col-span-2 rounded-3xl p-8" style="background: linear-gradient(135deg, #f5ebe0, #ede0d0);">
+        <svg class="w-8 h-8 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
+        <h3 class="mt-4 text-xl font-serif font-bold text-stone-800">Their actual voice</h3>
+        <p class="mt-2 text-stone-500 text-sm">Original audio, exactly as they told it. You'll hear the pauses, the laughs, the weight of every word.</p>
+        <div class="mt-6 flex gap-1 items-end">
+          <div class="w-1.5 rounded-full" style="height: 4px; background: #c4b5a3;"></div>
+          <div class="w-1.5 rounded-full" style="height: 8px; background: #c4b5a3;"></div>
+          <div class="w-1.5 rounded-full" style="height: 12px; background: #c4b5a3;"></div>
+          <div class="w-1.5 rounded-full" style="height: 6px; background: #c4b5a3;"></div>
+          <div class="w-1.5 rounded-full" style="height: 16px; background: #c4b5a3;"></div>
+          <div class="w-1.5 rounded-full" style="height: 10px; background: #c4b5a3;"></div>
+          <div class="w-1.5 rounded-full" style="height: 14px; background: #c4b5a3;"></div>
+          <div class="w-1.5 rounded-full" style="height: 6px; background: #c4b5a3;"></div>
+          <div class="w-1.5 rounded-full" style="height: 18px; background: #c4b5a3;"></div>
+          <div class="w-1.5 rounded-full" style="height: 10px; background: #c4b5a3;"></div>
+          <div class="w-1.5 rounded-full" style="height: 8px; background: #c4b5a3;"></div>
+          <div class="w-1.5 rounded-full" style="height: 14px; background: #c4b5a3;"></div>
+        </div>
+      </div>
+      <div class="rounded-3xl p-8" style="background: linear-gradient(135deg, #faf8f5, #f0ebe3);">
+        <svg class="w-8 h-8 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        <h3 class="mt-4 text-lg font-serif font-bold text-stone-800">Full transcripts</h3>
+        <p class="mt-2 text-stone-500 text-sm">Every word, searchable and readable anytime.</p>
+      </div>
+      <div class="rounded-3xl p-8" style="background: linear-gradient(135deg, #faf8f5, #f0ebe3);">
+        <svg class="w-8 h-8 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+        <h3 class="mt-4 text-lg font-serif font-bold text-stone-800">Best moments</h3>
+        <p class="mt-2 text-stone-500 text-sm">The quotes that rise to the top, surfaced by AI — just for your family.</p>
+      </div>
+      <div class="rounded-3xl p-8" style="background: linear-gradient(135deg, #ede0d0, #e3d5c4);">
+        <svg class="w-8 h-8 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>
+        <h3 class="mt-4 text-lg font-serif font-bold text-stone-800">Organized by theme</h3>
+        <p class="mt-2 text-stone-500 text-sm">Childhood, love, resilience, legacy — find what you need.</p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span class="px-3 py-1 rounded-full text-xs text-stone-600 bg-white/60">Childhood</span>
+          <span class="px-3 py-1 rounded-full text-xs text-stone-600 bg-white/60">Family</span>
+          <span class="px-3 py-1 rounded-full text-xs text-stone-600 bg-white/60">Legacy</span>
+        </div>
+      </div>
+      <div class="col-span-2 rounded-3xl p-8" style="background: linear-gradient(135deg, #ede0d0, #e3d5c4);">
+        <svg class="w-8 h-8 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        <h3 class="mt-4 text-xl font-serif font-bold text-stone-800">Shared with exactly who you choose</h3>
+        <p class="mt-2 text-stone-500 text-sm max-w-sm">Invite siblings, grandchildren, cousins. No one else ever sees a word.</p>
+        <div class="mt-6 flex -space-x-2">
+          <div class="w-9 h-9 rounded-full border-2 border-white flex items-center justify-center text-xs font-medium text-stone-600" style="background: #e8dfd3;">M</div>
+          <div class="w-9 h-9 rounded-full border-2 border-white flex items-center justify-center text-xs font-medium text-stone-600" style="background: #ddd0c4;">S</div>
+          <div class="w-9 h-9 rounded-full border-2 border-white flex items-center justify-center text-xs font-medium text-stone-600" style="background: #d4c5b0;">J</div>
+          <div class="w-9 h-9 rounded-full border-2 border-white flex items-center justify-center text-xs font-medium text-stone-600" style="background: #e8dfd3;">R</div>
+          <div class="w-9 h-9 rounded-full border-2 border-white flex items-center justify-center text-xs font-medium text-stone-600" style="background: #ddd0c4;">E</div>
+          <div class="w-9 h-9 rounded-full border-2 border-white bg-stone-200 flex items-center justify-center text-xs text-stone-500">+4</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="py-32" style="background: linear-gradient(160deg, #1c1917 0%, #292524 100%);">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-stone-500 text-xs tracking-widest uppercase font-medium mb-6">Private. Preserved. Yours.</p>
+    <h2 class="text-4xl sm:text-5xl font-serif font-bold text-stone-100 leading-tight">
+      The stories only your<br>family will ever hear.
+    </h2>
+    <p class="mt-6 text-stone-400 text-lg leading-relaxed">Begin a Capsule today. It takes five minutes to set up — and a lifetime to treasure.</p>
+    <div class="mt-10">
+      <a href="#" class="inline-flex items-center justify-center px-10 py-4 bg-stone-100 text-stone-900 font-medium rounded-full hover:bg-white transition text-lg">
+        Begin a Capsule — it's free
+      </a>
+    </div>
+    <p class="mt-5 text-stone-600 text-sm">No credit card. No public profile. Just your family's story.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="border-t border-stone-800" style="background-color: #1c1917;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="flex justify-between items-center">
+      <p class="text-stone-600 text-sm">&copy; 2026 Capsule</p>
+      <div class="space-x-4">
+        <a href="#" class="text-sm text-stone-600 hover:text-stone-400">Privacy</a>
+        <a href="#" class="text-sm text-stone-600 hover:text-stone-400">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
